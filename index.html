@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<title>JKW.com</title>
+
+<!-- CSS 는 이 리포지토리 안의 public/assets/ 에 있다 (빌드하면 dist/assets/ 로 복사된다).
+     ASP / Spring Boot / Django 스택과 같은 style.css 사본이다.
+     같은 화면이어야 "렌더링 방식만 다르다"는 비교가 성립하기 때문이다.
+
+     경로를 /assets/... 로 쓰는 이유
+       Vite 가 index.html 의 절대경로 자산 URL 앞에 base 를 붙여준다.
+         개발  base '/'            -> /assets/css/style.css
+         빌드  base '/react/dist/' -> /react/dist/assets/css/style.css
+       문서 기준 상대경로(./assets/...)로 쓰면 /board/free 같은 딥링크에서
+       /board/assets/... 로 풀려 깨진다. -->
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<script>
+/* 다크모드 깜빡임(FOUC) 방지 : ASP 스택의 Header.asp 와 같은 키를 쓴다.
+   같은 브라우저에서 /asp 와 /react 를 오가도 테마가 유지된다. */
+(function(){try{var t=localStorage.getItem('jkw-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();
+</script>
+</head>
+<body>
+<div id="root"></div>
+<script type="module" src="/src/main.jsx"></script>
+</body>
+</html>

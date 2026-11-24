@@ -1,0 +1,22 @@
+{
+  "name": "jkw-react",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "jkw.com 3차 스택 - React SPA (백엔드는 Classic ASP JSON API)",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:debug": "vite build --mode debug",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.0",
+    "vite": "^7.0.0"
+  }
+}
